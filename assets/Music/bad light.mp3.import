@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh88jy5k4pht5"
+path="res://.godot/imported/bad light.mp3-78f444d5554bb9c46b0524d18a319805.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/bad light.mp3"
+dest_files=["res://.godot/imported/bad light.mp3-78f444d5554bb9c46b0524d18a319805.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
