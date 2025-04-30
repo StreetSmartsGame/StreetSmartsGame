@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://8sl5gmdd6o6w" path="res://assets/camera/camera_3d.tscn" id="3_km5h1"]
 [ext_resource type="PackedScene" uid="uid://4y2ttyf5fj5s" path="res://assets/Car/car_colored.fbx" id="4_0ix4a"]
 [ext_resource type="FontFile" uid="uid://cxi2psa1opte" path="res://assets/Font/ARCADE_N.TTF" id="5_fcxb8"]
-[ext_resource type="Texture2D" uid="uid://bu4yrwu4rgphb" path="res://assets/Images/Driving Certificate.jpg" id="6_i6b30"]
 [ext_resource type="AudioStream" uid="uid://baxyqf5btt6ea" path="res://assets/Music/pluspoint.wav" id="6_i70ph"]
 [ext_resource type="AudioStream" uid="uid://c2aswajeoocgs" path="res://assets/Music/driving certificate.mp3" id="6_q5rx8"]
 [ext_resource type="AudioStream" uid="uid://cxglesw21xccw" path="res://assets/Music/minuspoint.wav" id="7_5nimg"]
+[ext_resource type="Texture2D" uid="uid://ovjrg5e1ij8e" path="res://assets/Images/Driving Certificate Updated.jpg" id="7_ii3le"]
 [ext_resource type="AudioStream" uid="uid://by0oip24cc8lq" path="res://assets/Music/game_music.mp3" id="9_boq5x"]
 [ext_resource type="AudioStream" uid="uid://d75mmitu0hb4" path="res://assets/Music/Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music.mp3" id="10_yb4ij"]
 
@@ -212,40 +212,41 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CertificateSound" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("6_q5rx8")
+volume_db = 3.5
 
 [node name="CertificateImage" type="TextureRect" parent="UI"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -6.975
-anchor_top = -5.35
-anchor_right = 8.025
-anchor_bottom = 6.2375
+anchor_left = -7.55
+anchor_top = -5.925
+anchor_right = 7.45
+anchor_bottom = 5.6625
 offset_left = 1.52588e-05
 offset_right = 1400.0
 offset_bottom = 1081.5
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_i6b30")
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("7_ii3le")
 stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="UI/CertificateImage"]
 modulate = Color(1, 1, 1, 0.501961)
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = -0.1515
 anchor_top = -0.0970874
 anchor_right = 1.155
 anchor_bottom = 1.10227
-metadata/_edit_use_anchors_ = true
 
 [node name="ShowEndPopupButton" type="Button" parent="UI"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 11.1
-anchor_top = 6.675
-anchor_right = 14.325
-anchor_bottom = 8.175
+anchor_left = 8.975
+anchor_top = 6.85
+anchor_right = 11.5
+anchor_bottom = 8.05
 theme_override_fonts/font = ExtResource("5_fcxb8")
 theme_override_font_sizes/font_size = 23
 text = "NEXT"

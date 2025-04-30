@@ -12,7 +12,7 @@ class_name BaseCar
 @onready var bgm_player = %BGMPLayer
 @onready var end_music_player = %EndMusicPlayer
 @onready var group_1: Node3D = $"../Group 1"
-@onready var speed_label = $Hud/speed
+@onready var speed_label = %Hud/speed
 
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
@@ -245,8 +245,7 @@ func display_end_message():
 
 	# Show the button that allows the user to continue
 	$UI/ShowEndPopupButton.visible = true
-
-
+	
 
 
 # Close pop-up and restart game
@@ -255,6 +254,7 @@ func close_end_popup():
 	Engine.time_scale = 1  # Resume normal speed
 
 	end_popup.visible = false  # Hide pop-up
+	speed_label.visible = true
 	reset_score()
 	reset_car()  # Reset the car position
 	
@@ -271,9 +271,9 @@ func _on_return_menu_pressed() -> void:
 	print("Next pressed")
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
-
 func _on_ShowEndPopupButton_pressed():
 	$UI/CertificateImage.visible = false
 	$UI/CertificateSound.stop()
 	$UI/EndPopup.visible = true
+	speed_label.visible = false
 	$UI/ShowEndPopupButton.visible = false  # Optional: hide button after use
