@@ -95,7 +95,7 @@ directional_shadow_max_distance = 200.0
 
 [node name="car" parent="." instance=ExtResource("2_47geq")]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.8927, 2, -31)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -849.893, 2, -31)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

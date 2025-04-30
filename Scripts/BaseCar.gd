@@ -27,6 +27,7 @@ var score: int = 0
 
 
 func _ready():
+	
 	if has_node("player"):
 		var player_node = get_node("player")
 		print("Found 'player' node. Its children are:")
@@ -219,30 +220,32 @@ func update_score_display():
 	if score_label:
 		score_label.text = "Score: " + str(score)
 
-
-
-
-# End barrier pop-up display
 func display_end_message():
 	game_paused = true
-	Engine.time_scale = 0  # Freeze the game
+	Engine.time_scale = 0
 
 	feedback_label.visible = false
-	end_popup.visible = true
+
+	var cert = $UI/CertificateImage
+	var cert_sound = $UI/CertificateSound
+	cert.visible = true
+	cert_sound.play()
 
 	bgm_player.stop()
 	if not Global.music_muted:
 		end_music_player.play()
 
-	end_message.clear()  # Clear any existing text
-
-	var message_text = "[center]🏁 Final Score: " + str(score)+ "\n\n\n\n\n"
+	end_message.clear()
+	var message_text = "[center]🏁 Final Score: " + str(score) + "\n\n\n\n\n"
 	message_text += "🚦 Quick Traffic Tips for the Real World:\n\n\n\n\n"
 	message_text += "- 🛑 Stop signs = full stop, look around, go when safe.\n\n\n\n\n"
 	message_text += "- ⚠️ Speed limits = max speed allowed, not a suggestion!\n\n\n\n\n"
 	message_text += "Drive smart out there! Play Again![/center]"
-
 	end_message.parse_bbcode(message_text)
+
+	# Show the button that allows the user to continue
+	$UI/ShowEndPopupButton.visible = true
+
 
 
 
@@ -255,8 +258,10 @@ func close_end_popup():
 	reset_score()
 	reset_car()  # Reset the car position
 	
-	end_music_player.stop()
-	bgm_player.play()
+	if not Global.music_muted:
+		end_music_player.stop()
+	if not Global.music_muted:
+		bgm_player.play()
 
 func _on_oncoming_lane_entered(body: Node3D):
 	get_tree().change_scene_to_file("res://Scenes/bad_oncoming_traffic.tscn")
@@ -265,3 +270,10 @@ func _on_oncoming_lane_entered(body: Node3D):
 func _on_return_menu_pressed() -> void:
 	print("Next pressed")
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_ShowEndPopupButton_pressed():
+	$UI/CertificateImage.visible = false
+	$UI/CertificateSound.stop()
+	$UI/EndPopup.visible = true
+	$UI/ShowEndPopupButton.visible = false  # Optional: hide button after use
