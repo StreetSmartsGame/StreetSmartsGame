@@ -54,12 +54,13 @@ theme_override_fonts/font = ExtResource("1_4xnxy")
 theme_override_font_sizes/font_size = 29
 text = "
 CONTROLS:
-- Arrow Keys: Drive
+- Front Arrow: Drive
 - Back Arrow: Reverse
+-Left and Right Arrow: Steer
 - Space: Brake
 
 GOAL:
-Navigate traffic safely and follow road rules!
+Navigate traffic safely and follow road rules to reach the DMV. Then, you'll earn your certificate from your instructor!
 "
 horizontal_alignment = 1
 autowrap_mode = 2

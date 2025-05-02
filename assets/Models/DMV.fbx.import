@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnau8jhybgxlx"
-path="res://.godot/imported/car_stationwagon.fbx-41ecd4c88b00a79451a452006da0826c.scn"
+uid="uid://bvbbieu6ex3b1"
+path="res://.godot/imported/DMV.fbx-39fac09b79099560a6d485ee46ddbaff.scn"
 
 [deps]
 
-source_file="res://assets/World/Building/car_stationwagon.fbx"
-dest_files=["res://.godot/imported/car_stationwagon.fbx-41ecd4c88b00a79451a452006da0826c.scn"]
+source_file="res://assets/Models/DMV.fbx"
+dest_files=["res://.godot/imported/DMV.fbx-39fac09b79099560a6d485ee46ddbaff.scn"]
 
 [params]
 

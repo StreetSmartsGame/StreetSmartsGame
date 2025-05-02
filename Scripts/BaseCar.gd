@@ -205,7 +205,8 @@ func successfully_stopped_at_stop_sign():
 func apply_speeding_penalty():
 	feedback_label.text = "Slow down! Watch your speed!"  # Set the message text
 	feedback_label.visible = true
-	score -= 5
+	if (score != 0):
+		score -= 5
 	update_score_display()
 	minuspoint.play()
 	
@@ -237,9 +238,10 @@ func display_end_message():
 
 	end_message.clear()
 	var message_text = "[center]🏁 Final Score: " + str(score) + "\n\n\n\n\n"
-	message_text += "🚦 Quick Traffic Tips for the Real World:\n\n\n\n\n"
+	message_text += " Quick Traffic Tips for the Real World:\n\n\n\n\n"
 	message_text += "- 🛑 Stop signs = full stop, look around, go when safe.\n\n\n\n\n"
 	message_text += "- ⚠️ Speed limits = max speed allowed, not a suggestion!\n\n\n\n\n"
+	message_text += "🚦 Traffic lights = stop on red, go on green:\n\n\n\n\n"
 	message_text += "Drive smart out there! Play Again![/center]"
 	end_message.parse_bbcode(message_text)
 
